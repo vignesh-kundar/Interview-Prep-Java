@@ -17,6 +17,20 @@ class BinaryTreeTraversal {
         postOrder(root);
         System.out.println("\n");
 
+        int target = 2;
+        System.out.println("Binary Search : Target -> " + target);
+        System.out.println("Search result : " + binarySerach(target , root));
+    }
+
+    // binary search
+    private static boolean binarySerach( int target , Tree root ) {
+        if (root == null) return false;
+
+        while ( root != null ) {
+            if (target == root.val) return true;
+            root = ( target <= root.val ) ? root.left : root.right;
+        }
+        return false;
     }
 
     // pre order
