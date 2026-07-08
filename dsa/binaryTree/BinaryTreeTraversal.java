@@ -19,16 +19,16 @@ class BinaryTreeTraversal {
 
         int target = 2;
         System.out.println("Binary Search : Target -> " + target);
-        System.out.println("Search result : " + binarySerach(target , root));
+        System.out.println("Search result : " + binarySerach(target, root));
     }
 
     // binary search
-    private static boolean binarySerach( int target , Tree root ) {
+    private static boolean binarySerach(int target, Tree root) {
         if (root == null) return false;
 
-        while ( root != null ) {
+        while (root != null) {
             if (target == root.val) return true;
-            root = ( target <= root.val ) ? root.left : root.right;
+            root = (target <= root.val) ? root.left : root.right;
         }
         return false;
     }
@@ -37,24 +37,26 @@ class BinaryTreeTraversal {
     private static void preOrder(Tree root) {
         if (root == null) return;
 
-        System.out.print( root.val + " " );
+        System.out.print(root.val + " ");
         preOrder(root.left);
         preOrder(root.right);
     }
+
     // post order
     private static void postOrder(Tree root) {
         if (root == null) return;
 
         postOrder(root.left);
         postOrder(root.right);
-        System.out.print( root.val + " " );
+        System.out.print(root.val + " ");
     }
+
     // in order
     private static void inOrder(Tree root) {
         if (root == null) return;
 
         inOrder(root.left);
-        System.out.print( root.val + " " );
+        System.out.print(root.val + " ");
         inOrder(root.right);
     }
 
